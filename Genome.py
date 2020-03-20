@@ -17,11 +17,10 @@ class Genome:
     self : class
       Object Genome creat here
 
-    I : int
-      The input vector
-    O : int
-      The output vector
-
+    I : list
+      The input vector, a list of int
+    O : list
+      The output vector, a list of int
     """
     self.O_=O  #range of the Output vector
     
@@ -127,7 +126,7 @@ class Genome:
     
   def Add_Genes(self, Number_Of_Genes):
     """
-    add a selected number of genes
+    Add a selected number of genes
     
     Parameters
     ----------
