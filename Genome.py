@@ -17,10 +17,10 @@ class Genome:
     self : class
       Object Genome creat here
 
-    I : int
-      The input vector
-    O : int
-      The output vector
+    I : list
+      The input vector, a list of int
+    O : list
+      The output vector, a list of int
 
     """
     self.O_=O  #range of the Output vector
@@ -175,7 +175,7 @@ class Genome:
     self.Add_Connection(int(np.random.random()*(self.H_+self.I_)),int(np.random.random()*(self.H_+self.O_)),Value) # Add a connection of a chosen value in a random position in the Connections Matrix 
    
   def SetMap_From_Txt(self,namefile):
-  """
+    """
     Retrieves a matrix in a txt file and atrributes it to the Map_ attribute of the current Genom object
   
     Parameters
@@ -185,11 +185,11 @@ class Genome:
     
     namefile : str
       The name of the file which contain the Matrix
-  """
+    """
    self.Set_Map(np.loadtxt(namefile))
     
   def PutMap_Into_Txt(self, namefile):
-  """
+    """
     Retrieves the Map_ of the current Genom object and writes it into a file txt
   
     Parameters
@@ -198,7 +198,7 @@ class Genome:
       Object Genome
     namefile : str
       The name of the file which will be creat and stock the Matrix
-  """
+    """
    namefile=namefile+".txt"
    np.savetxt(namefile, self.Map_, fmt='%d')
     
