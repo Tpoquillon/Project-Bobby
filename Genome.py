@@ -16,7 +16,6 @@ class Genome:
     ----------
     self : class
       Object Genome creat here
-
     I : int
       The input vector length
     O : int
