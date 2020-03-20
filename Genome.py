@@ -8,8 +8,21 @@ Created on Fri Apr  5 08:23:06 2019
 import numpy as np
 
 class Genome:
-  def __init__(self,I=25,O=3):  #Default Contructor
+  def __init__(self,I=25,O=3):  
+    """
+    Default Contructor
     
+    Parameters
+    ----------
+    self : class
+      Object Genome creat here
+
+    I : int
+      The input vector
+    O : int
+      The output vector
+
+    """
     self.O_=O  #range of the Output vector
     
     self.I_=I  #range of the Input vector
@@ -20,8 +33,17 @@ class Genome:
     
     self.Map_=np.zeros((I,O))  #Conection Matrix
     
-  def Copy_Genom(self,model):  #modify the current genom to be a copy of the Genom ojevt "model"
-    
+  def Copy_Genom(self,model):
+    """
+    Modify the current genom to be a copy of the Genom oject "model"
+
+    Parameters
+    ----------
+    self : class
+      Object Genome who is created
+    model : class
+      Object Genome to copy
+    """    
     self.O_=model.O_  
     
     self.I_=model.I_  
@@ -34,24 +56,68 @@ class Genome:
 
 
 
-  def Set_Map(self,Matrix):  #Matrix Setter by copy
+  def Set_Map(self,Matrix):
+    """
+    Matrix Setter by copy
+    
+    Parameters
+    ----------
+    self : class
+      Object Genome
+    Matrix : list
+      A list of list of int
+
+    """
     self.H_=len(Matrix)-self.I_
     self.Hidden_=np.zeros((1,self.H_))
     self.Map_=np.matrix.copy(Matrix)
 
-  def Processing(self,Input):  #Product vector of decision based on a vector of actions passed as a parameter
+  def Processing(self,Input):
+    """
+    Product vector of decision based on a vector of actions passed as a parameter
+    
+    Parameters
+    ----------
+    self : class
+      Object Genome
+    Input : list
+      vector of actions  
+
+    Returns
+    --------
+    list
+      vector of decision
+    """
     Out=(np.concatenate((Input,self.Hidden_),axis=None).dot(self.Map_))>0  
     self.Hidden_=1*Out[self.O_:self.O_+self.H_]
     return Out[0:self.O_]
 
-  def Add_Gene(self):#This methode add a new gene, an intermediary hiden node between the input and the output. It improve the lenght of Hiden and H by one
+  def Add_Gene(self):
+    """
+    This methode add a new gene, an intermediary hidden node between the input and the output. 
+    It improve the lenght of Hidden and H by one
+
+    Parameters
+    ----------
+    self : class
+      Object Genome
+    """
+
     self.H_+=1
     self.Hidden_=np.zeros((1,self.H_))
     M=np.zeros((self.I_+self.H_,self.O_+self.H_))
     M[0:self.I_+self.H_-1,0:self.O_+self.H_-1]=self.Map_
     self.Map_=M
     
-  def Remote_Last_Gene(self):#enlève le dernier gène, diminue la taille du génome de 1
+  def Remote_Last_Gene(self):
+    """
+    Remove the last gene and reduce the genome's length by 1
+
+    Parameters
+    ----------
+    self : class
+      Object Genome
+    """
     if self.H_!=0:
       self.H_=self.H_-1
       self.Hidden_=np.zeros((1,self.H_))
@@ -59,22 +125,80 @@ class Genome:
       M=self.Map_[0:self.I_+self.H_,0:self.O_+self.H_]
       self.Map_=M   
     
-  def Add_Genes(self, Number_Of_Genes):# add a selected number of genes
+  def Add_Genes(self, Number_Of_Genes):
+    """
+    add a selected number of genes
+    
+    Parameters
+    ----------
+    self : class
+      Object Genome
+
+    Number_Of_Genes : int
+      The number of gene to insert in the Genome
+    """
+
     for i in range(Number_Of_Genes):
       self.Add_Gene() 
       
-      
-  
-  def Add_Connection(self,Source,Target,Value=1): # Add a connection of a chosen value in the chosen position in the Connections Matrix 
+  def Add_Connection(self,Source,Target,Value=1):
+   """
+    Add a connection of a chosen value in the chosen position in the Connections Matrix 
+    
+    Parameters
+    ----------
+    self : class
+      Object Genome
+
+    Source : int
+      Position a gene
+
+    Target : int
+      Position of the target in the gene
+
+    Value : int
+      By default, equal to 1
+    """
     self.Map_[Source,Target]=Value
     
   def Add_Random_Connection(self,Value=1):
+    """
+    Add a random connection
+
+    Parameters
+    ----------
+    self : class
+      Object Genome
+    Value : int
+      By default, equal to 1
+    """
     self.Add_Connection(int(np.random.random()*(self.H_+self.I_)),int(np.random.random()*(self.H_+self.O_)),Value) # Add a connection of a chosen value in a random position in the Connections Matrix 
    
-  def SetMap_From_Txt(self,namefile):#retrieves a matrix in a txt file and atrributes it to the Map_ attribute of the current Genom object
+  def SetMap_From_Txt(self,namefile):
+  """
+    Retrieves a matrix in a txt file and atrributes it to the Map_ attribute of the current Genom object
+  
+    Parameters
+    ----------
+    self : class
+      Object Genome
+    
+    namefile : str
+      The name of the file which contain the Matrix
+  """
    self.Set_Map(np.loadtxt(namefile))
     
-  def PutMap_Into_Txt(self, namefile):#retrieves the Map_ of the current Genom object and writes it into a file txt
+  def PutMap_Into_Txt(self, namefile):
+  """
+    Retrieves the Map_ of the current Genom object and writes it into a file txt
+  
+    Parameters
+    ----------
+    self : class
+      Object Genome
+    namefile : str
+      The name of the file which will be creat and stock the Matrix
+  """
    namefile=namefile+".txt"
    np.savetxt(namefile, self.Map_, fmt='%d')
     
