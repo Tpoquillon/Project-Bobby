@@ -141,7 +141,7 @@ class Genome:
       self.Add_Gene() 
       
   def Add_Connection(self,Source,Target,Value=1):
-   """
+    """
     Add a connection of a chosen value in the chosen position in the Connections Matrix 
     
     Parameters
@@ -174,7 +174,7 @@ class Genome:
     self.Add_Connection(int(np.random.random()*(self.H_+self.I_)),int(np.random.random()*(self.H_+self.O_)),Value) # Add a connection of a chosen value in a random position in the Connections Matrix 
    
   def SetMap_From_Txt(self,namefile):
-  """
+    """
     Retrieves a matrix in a txt file and atrributes it to the Map_ attribute of the current Genom object
   
     Parameters
@@ -184,11 +184,11 @@ class Genome:
     
     namefile : str
       The name of the file which contain the Matrix
-  """
-   self.Set_Map(np.loadtxt(namefile))
+    """
+    self.Set_Map(np.loadtxt(namefile))
     
   def PutMap_Into_Txt(self, namefile):
-  """
+    """
     Retrieves the Map_ of the current Genom object and writes it into a file txt
   
     Parameters
@@ -197,9 +197,9 @@ class Genome:
       Object Genome
     namefile : str
       The name of the file which will be creat and stock the Matrix
-  """
-   namefile=namefile+".txt"
-   np.savetxt(namefile, self.Map_, fmt='%d')
+    """
+    namefile=namefile+".txt"
+    np.savetxt(namefile, self.Map_, fmt='%d')
     
     
 if __name__ == '__main__':
