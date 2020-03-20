@@ -11,6 +11,23 @@ import Genome
 import math as mt
 class Agent:
   def __init__(self,x,y,myGenome,grid):#Constructor which takes an existing genome, a grid and a position wanted for the agent on this grid
+    """
+    Default Contructor
+    
+    Parameters
+    ----------
+    self : class
+      Object Agent creat here
+
+    x : int
+      the x position of the agent on the environment
+    y : int
+      the y position of the agent on the environment
+    myGenome : Genome
+      the Genome of the Agent
+    grid : np
+
+    """
     self.posX_=x
     self.posY_=y
     self.Genome_= Genome.Genome(myGenome.I_,myGenome.O_)
@@ -21,7 +38,7 @@ class Agent:
     self.Double_Jump=False
     
     
-    
+
   def Jump(self):
     if(self.Environment_[self.posY_+1,self.posX_]==1):
       self.Double_Jump=True
@@ -35,7 +52,9 @@ class Agent:
       return True
     elif self.decision_[0] and self.Double_Jump: #ne saute pas mais ne tombe pas, consomme de dauble saut
       self.Double_Jump=False
-      return True      
+      return True 
+
+     
   def MvForward(self):
     if(self.decision_[1] and not(self.decision_[2]) and self.Environment_[self.posY_,self.posX_+1]!=1):
       self.posX_=self.posX_+1
