@@ -274,22 +274,22 @@ class Game:
       Object Game
     """      
     self.Time+=1
-      for Ag in self.Pop:
-        if Ag.Alive:
-          self.Grid[Ag.posY_,Ag.posX_]=0
-          Ag.Make_Decision()
-          if(not(Ag.Jump())):
-            Ag.Fall()
-          Ag.MvForward()
-          Ag.MvBackward()
-      for Ag in self.Pop:
-        if Ag.Alive:
-          self.Grid[Ag.posY_,Ag.posX_]=2
-      self.World.draw_grid(self.Grid)
-      for Ag in self.Pop:
-        if Ag.Alive:
-          self.Grid[Ag.posY_,Ag.posX_]=0
-        
+    for Ag in self.Pop:
+      if Ag.Alive:
+        self.Grid[Ag.posY_,Ag.posX_]=0
+        Ag.Make_Decision()
+        if(not(Ag.Jump())):
+          Ag.Fall()
+        Ag.MvForward()
+        Ag.MvBackward()
+    for Ag in self.Pop:
+      if Ag.Alive:
+        self.Grid[Ag.posY_,Ag.posX_]=2
+    self.World.draw_grid(self.Grid)
+    for Ag in self.Pop:
+      if Ag.Alive:
+        self.Grid[Ag.posY_,Ag.posX_]=0
+      
   def RunBlind(self): #run sans affichage
     """
     Run the game, move all the individual once whitout print them
