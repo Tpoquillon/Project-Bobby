@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Agent module &#8212; Software Developpement Bobby 0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Game module" href="Game.html" />
+    <link rel="prev" title="Welcome to Software Developpement’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-Agent">
+<span id="agent-module"></span><h1>Agent module<a class="headerlink" href="#module-Agent" title="Permalink to this headline">¶</a></h1>
+<p>Created on Fri Apr  5 08:21:52 2019</p>
+<p>&#64;author: tpoquillon</p>
+<dl class="class">
+<dt id="Agent.Agent">
+<em class="property">class </em><code class="sig-prename descclassname">Agent.</code><code class="sig-name descname">Agent</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">myGenome</em>, <em class="sig-param">grid</em><span class="sig-paren">)</span><a class="headerlink" href="#Agent.Agent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="Agent.Agent.Fall">
+<code class="sig-name descname">Fall</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Agent.Agent.Fall" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fall methode, that looks if the Agent shall fell
+If so, it makes it fall by changing its positions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<em>class</em>) – </p></li>
+<li><p><strong>Agent</strong> (<em>the</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>True if the Agent performed the action</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Agent.Agent.Jump">
+<code class="sig-name descname">Jump</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Agent.Agent.Jump" title="Permalink to this definition">¶</a></dt>
+<dd><p>Jump methode, that looks if the Agent wants to jump and if it can.
+If so, it then performs the action by changing its positions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<em>class</em>) – </p></li>
+<li><p><strong>Agent</strong> (<em>the</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>True if the Agent performed the action</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Agent.Agent.Make_Decision">
+<code class="sig-name descname">Make_Decision</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Agent.Agent.Make_Decision" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make_Decision methode, that uses the Agent <a href="#id1"><span class="problematic" id="id2">Environment_</span></a> and <a href="#id3"><span class="problematic" id="id4">Genome_</span></a> to updat
+its <a href="#id5"><span class="problematic" id="id6">decision_</span></a>. See Genome.Processing</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<em>class</em>) – </p></li>
+<li><p><strong>Agent</strong> (<em>the</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Agent.Agent.Mutate">
+<code class="sig-name descname">Mutate</code><span class="sig-paren">(</span><em class="sig-param">mute_max</em>, <em class="sig-param">add_conect_prob</em><span class="sig-paren">)</span><a class="headerlink" href="#Agent.Agent.Mutate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Randomly mutate the Agent <a href="#id7"><span class="problematic" id="id8">Genome_</span></a>.
+See Genome.Add_Random_Connection , Genome.Add_Gene
+and Genome.Remote_Last_Gene</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<em>class</em>) – </p></li>
+<li><p><strong>Agent</strong> (<em>the</em>) – </p></li>
+<li><p><strong>mute_max</strong> (<em>int</em>) – </p></li>
+<li><p><strong>number of mutations</strong> (<em>max</em>) – </p></li>
+<li><p><strong>add_conect_prob</strong> (<em>float</em>) – </p></li>
+<li><p><strong>probability of adding a new gene in the Genome instead of modifying an</strong> (<em>the</em>) – </p></li>
+<li><p><strong>existant one during a mutation.</strong> (<em>already</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Agent.Agent.MvBackward">
+<code class="sig-name descname">MvBackward</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Agent.Agent.MvBackward" title="Permalink to this definition">¶</a></dt>
+<dd><p>MvBackward methode, that looks if the Agent wants to moove backward and if
+it can.
+If so, it performs the action by changing its positions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<em>class</em>) – </p></li>
+<li><p><strong>Agent</strong> (<em>the</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>True if the Agent performed the action</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Agent.Agent.MvForward">
+<code class="sig-name descname">MvForward</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Agent.Agent.MvForward" title="Permalink to this definition">¶</a></dt>
+<dd><p>MvForward methode, that looks if the Agent wants to moove forward and if it
+can.
+If so, it performs the action by changing its positions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<em>class</em>) – </p></li>
+<li><p><strong>Agent</strong> (<em>the</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>True if the Agent performed the action</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Software Developpement Bobby</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Agent module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Game.html">Game module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Genome.html">Genome module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ViewWorld.html">ViewWorld module</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to Software Developpement’s documentation!</a></li>
+      <li>Next: <a href="Game.html" title="next chapter">Game module</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Floreau Poquillon Sorin.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/Agent.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

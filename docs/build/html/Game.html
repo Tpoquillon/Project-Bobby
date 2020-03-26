@@ -1,0 +1,381 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Game module &#8212; Software Developpement Bobby 0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Genome module" href="Genome.html" />
+    <link rel="prev" title="Agent module" href="Agent.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-Game">
+<span id="game-module"></span><h1>Game module<a class="headerlink" href="#module-Game" title="Permalink to this headline">¶</a></h1>
+<p>Created on Fri Apr  5 08:20:10 2019</p>
+<p>&#64;author: tpoquillon</p>
+<dl class="class">
+<dt id="Game.Game">
+<em class="property">class </em><code class="sig-prename descclassname">Game.</code><code class="sig-name descname">Game</code><span class="sig-paren">(</span><em class="sig-param">H=9</em>, <em class="sig-param">L=100</em><span class="sig-paren">)</span><a class="headerlink" href="#Game.Game" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="Game.Game.AddAgent">
+<code class="sig-name descname">AddAgent</code><span class="sig-paren">(</span><em class="sig-param">agent</em><span class="sig-paren">)</span><a class="headerlink" href="#Game.Game.AddAgent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an agent at the population</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<em>class</em>) – Object Game</p></li>
+<li><p><strong>agent</strong> (<em>class</em>) – Object Agent, an individual who will try the map</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Game.Game.AddBlockStratum">
+<code class="sig-name descname">AddBlockStratum</code><span class="sig-paren">(</span><em class="sig-param">xl</em>, <em class="sig-param">xr</em><span class="sig-paren">)</span><a class="headerlink" href="#Game.Game.AddBlockStratum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a layer of blocks between the position x1 and xr</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<em>class</em>) – Object Game</p></li>
+<li><p><strong>xl</strong> (<em>int</em>) – The start position of the layer</p></li>
+<li><p><strong>xr</strong> (<em>int</em>) – The end position of the layer</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Game.Game.Evolution">
+<code class="sig-name descname">Evolution</code><span class="sig-paren">(</span><em class="sig-param">Methode=0</em>, <em class="sig-param">Indiv=50</em>, <em class="sig-param">Mute=10</em>, <em class="sig-param">timeMax=10</em><span class="sig-paren">)</span><a class="headerlink" href="#Game.Game.Evolution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the time to solve the game
+Two methode of children are possible :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Methode 0 : only the best individual can have children, it is him genome who is mutate</p></li>
+<li><p>Methode 1 : the 50% best individuals have children by mutation of them genome</p></li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<em>class</em>) – Object Game</p></li>
+<li><p><strong>Methode</strong> (<em>int</em>) – The methode choose for the generation of indivual, can take the values 0 or 1, by default methode select is 0</p></li>
+<li><p><strong>Indiv</strong> (<em>int</em>) – The number of individual in the new population, by default equal to 50</p></li>
+<li><p><strong>Mute</strong> (<em>int</em>) – Number of mutation, by default equal to 10</p></li>
+<li><p><strong>timeMax</strong> (<em>int</em>) – Maximal time, if the game is not solve stop the function, by default equal to 10</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>int</em> – time made by a individual in the population after several mutation to complite the game</p></li>
+<li><p><em>int</em> – number of generation create to solve the game</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Game.Game.Evolve">
+<code class="sig-name descname">Evolve</code><span class="sig-paren">(</span><em class="sig-param">Children</em>, <em class="sig-param">MutationsRate</em>, <em class="sig-param">Generation=500</em><span class="sig-paren">)</span><a class="headerlink" href="#Game.Game.Evolve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the time to solve the game
+Only the individual with the best fitness have child</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<em>class</em>) – Object Game</p></li>
+<li><p><strong>Children</strong> (<em>int</em>) – Number of children of the best individual</p></li>
+<li><p><strong>MutatopnsRate</strong> (<em>int</em>) – Number of mutation</p></li>
+<li><p><strong>Generation</strong> (<em>int</em>) – Number of generation create, by default equal to 500</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>time made by a individual in the population after several mutation to complite the game</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Game.Game.EvolveByDivision">
+<code class="sig-name descname">EvolveByDivision</code><span class="sig-paren">(</span><em class="sig-param">IndivMax</em>, <em class="sig-param">MutationsRate</em>, <em class="sig-param">Generation=500</em><span class="sig-paren">)</span><a class="headerlink" href="#Game.Game.EvolveByDivision" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the time to solve the game
+Each individual can have children (if population is not full) but the individual with the best fitness begin</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<em>class</em>) – Object Game</p></li>
+<li><p><strong>IndivMax</strong> (<em>int</em>) – Maximal number of individual in the population</p></li>
+<li><p><strong>MutatopnsRate</strong> (<em>int</em>) – Number of mutation</p></li>
+<li><p><strong>Generation</strong> (<em>int</em>) – Number of generation create, by default equal to 500</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>time made by a individual in the population after several mutation to complite the game</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Game.Game.File_to_map">
+<code class="sig-name descname">File_to_map</code><span class="sig-paren">(</span><em class="sig-param">s</em><span class="sig-paren">)</span><a class="headerlink" href="#Game.Game.File_to_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a map from a text file (.txt)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<em>class</em>) – Object Game</p></li>
+<li><p><strong>s</strong> (<em>str</em>) – the file name where the map is located</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Game.Game.FindBestAgent">
+<code class="sig-name descname">FindBestAgent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Game.Game.FindBestAgent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the best agent, the individual who arrived first</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>self</strong> (<em>class</em>) – Object Game</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Game.Game.MakePit">
+<code class="sig-name descname">MakePit</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#Game.Game.MakePit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creat a hole a the x position</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<em>class</em>) – Object Game</p></li>
+<li><p><strong>x</strong> (<em>int</em>) – The position where the hole is creat</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Game.Game.New_Generation">
+<code class="sig-name descname">New_Generation</code><span class="sig-paren">(</span><em class="sig-param">Methode=0</em>, <em class="sig-param">Indiv=50</em>, <em class="sig-param">Mute=10</em><span class="sig-paren">)</span><a class="headerlink" href="#Game.Game.New_Generation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new generation of individual from the descending sort population.
+Two methode are possible :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Methode 0 : only the best individual can have children, it is him genome who is mutate</p></li>
+<li><p>Methode 1 : the 50% best individuals have children by mutation of them genome</p></li>
+</ul>
+</div></blockquote>
+<p>By default the choosen methode is the methode 0</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<em>class</em>) – Object Game</p></li>
+<li><p><strong>Methode</strong> (<em>int</em>) – The methode choose for the generation of indivual, can take the values 0 or 1, by default methode select is 0</p></li>
+<li><p><strong>Indiv</strong> (<em>int</em>) – Number of individual at the new generation, by default 50</p></li>
+<li><p><strong>Mute</strong> (<em>int</em>) – Number of mutation by genome desire, by default 10</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Game.Game.PopTest">
+<code class="sig-name descname">PopTest</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Game.Game.PopTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the time is inferior to 2*length of the game area
+Check if some individual just make round trip without progress in the game area</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>self</strong> (<em>class</em>) – Object Game</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Game.Game.Random_Level_generation">
+<code class="sig-name descname">Random_Level_generation</code><span class="sig-paren">(</span><em class="sig-param">nbPit</em>, <em class="sig-param">nblayer</em><span class="sig-paren">)</span><a class="headerlink" href="#Game.Game.Random_Level_generation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a random level with a nbPit hole and a nblayer layer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<em>class</em>) – Object Game</p></li>
+<li><p><strong>nbPit</strong> (<em>int</em>) – The number of hole on the board</p></li>
+<li><p><strong>nblayer</strong> (<em>int</em>) – The number of layer on the board</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Game.Game.RunBlind">
+<code class="sig-name descname">RunBlind</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Game.Game.RunBlind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the game, move all the individual once whitout print them</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>self</strong> (<em>class</em>) – Object Game</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Game.Game.SortByFitness">
+<code class="sig-name descname">SortByFitness</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Game.Game.SortByFitness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sort descending the population of individual depending the fitness, from the best to the worst</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>self</strong> (<em>class</em>) – Object Game</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Game.Game.Start">
+<code class="sig-name descname">Start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Game.Game.Start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set up the begin of the game by positionning the individuals on the game area</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>self</strong> (<em>class</em>) – Object Game</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Game.Game.initdraw">
+<code class="sig-name descname">initdraw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Game.Game.initdraw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a game area</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>self</strong> (<em>class</em>) – Object Game</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Game.Game.printgridstep">
+<code class="sig-name descname">printgridstep</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Game.Game.printgridstep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print the game area</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>self</strong> (<em>class</em>) – Object Game</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Game.Game.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Game.Game.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the game, move all the individual once and print them</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>self</strong> (<em>class</em>) – Object Game</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Software Developpement Bobby</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Agent.html">Agent module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Game module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Genome.html">Genome module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ViewWorld.html">ViewWorld module</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="Agent.html" title="previous chapter">Agent module</a></li>
+      <li>Next: <a href="Genome.html" title="next chapter">Genome module</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Floreau Poquillon Sorin.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/Game.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
