@@ -3,7 +3,7 @@ import time
 class CreateWorld(tk.Canvas):
   def __init__(self):
 	"""
-    Create a window
+    Creates a window
     
     Parameters
     ----------
@@ -21,7 +21,7 @@ class CreateWorld(tk.Canvas):
 				
   def on_resize(self,event):
 	"""
-    Determine the ratio of old width/height to new width/height, resize the canvas, rescale all the objects tagged with the "all" tag
+    Determines the ratio of old width/height to new width/height, resizes the canvas, rescales all the objects tagged with the "all" tag
     
     Parameters
     ----------
@@ -43,14 +43,14 @@ class CreateWorld(tk.Canvas):
 	
   def draw_grid(self, Grid):
 	"""
-    Draw a grid and the game area
+    Draws a grid and the game area
     
     Parameters
     ----------
     self : class
       Object CreateWorld in the library tkinder
     Grid : list
-      A list of list of int contain the game area
+      A list of list of int contains the game area
     """
 	self.w = len(Grid[0])
 	self.h = len(Grid)
