@@ -113,7 +113,7 @@ class Genome:
 
     Examples
     --------
-    >>> import import numpy as np
+    >>>import import numpy as np
     >>>gm3=Genome(3,2)
     >>>gm4.Copy_Genom(gm3)
     >>> gm4.Map_
@@ -155,6 +155,7 @@ class Genome:
       
     Examples
     --------
+    >>>import import numpy as np
     >>>gm2=Genome(2,2)
     >>>gm2.Set_Map(np.array([[1, 2], [3, 4]]))
     >>>gm2.Map_
@@ -185,6 +186,7 @@ class Genome:
     
     Examples
     --------
+    >>>import import numpy as np
     >>>gm3=Genome(2,4)
     >>>gm3.Set_Map(np.array([[0,1,0,1],[1,0,1,0]]))
     >>>gm3.Processing(np.array([0,1]))
@@ -207,6 +209,7 @@ class Genome:
     
     Examples
     --------
+    >>>import import numpy as np
     >>>gm5=Genome(2,4)
     >>>gm5.Add_Gene()
     >>>gm5.H_
@@ -232,6 +235,7 @@ class Genome:
     
     Examples
     --------
+    >>>import import numpy as np
     >>>gm5=Genome(2,4)
     >>>gm5.Add_Gene()
     >>>gm5.Add_Gene()
@@ -262,6 +266,7 @@ class Genome:
     
     Examples
     --------
+    >>>import import numpy as np
     >>>gm6=Genome(2,4)
     >>>gm6.Set_Map(np.array([[0,1,0,1],[1,0,1,0]]))
     >>>gm6.Add_Genes(3)
@@ -301,6 +306,7 @@ class Genome:
     
     Examples
     --------
+    >>>import import numpy as np
     >>>gm7=Genome(2,4)
     >>>gm7.Add_Connection(0,3,-8)
     >>>gm7.Map_[0,3]
@@ -321,6 +327,7 @@ class Genome:
       
     Examples
     --------
+    >>>import import numpy as np
     >>>gm8=Genome(1,4)
     >>>gm8.Add_Random_Connection()
     >>>for i in range(4):
