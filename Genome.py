@@ -19,7 +19,7 @@ class Genome:
       the range of the hidden vector
     Hidden_ : np_Array
       the hidden boolean vector describing the state of each hidden node.
-      1 is active ande 0 ins inactive
+      1 is active and 0 is inactive
     Map_ : np_Array
       the conection matrice linking the input , output  and hidden vector.
       this is the brain of our AI
@@ -27,29 +27,29 @@ class Genome:
     Methodes
     --------   
     Copy_Genome(model)
-      Modify the current genom to be a copy of the Genom oject "model"
+      Modifies the current genom to be a copy of the Genom oject "model"
     Set_Map(Matrix)
       Matrix Setter by copy of an np_Array
     Processing (input)
-      Product vector of decision (output vector) based on a its state 
-      (hiden vector) and environment (input vector) with the connection 
+      Product decision vector (output vector) based on a its state 
+      (hidden vector) and environment (input vector) with the connection 
       matrix
     Add_Gene()
-      This methode add a new gene, an intermediary hidden node between the 
-      input and the output. It improve the lenght of Hidden and H by one   
+      This method adds a new gene, an intermediary hidden node between the 
+      input and the output. It increases the lenght of Hidden and H by one   
     Remote_Last_Gene()
-      Remove the last gene and reduce the genome's length by 1
+      Removes the last gene and reduces the genome's length by 1
     Add_Genes(N)
-      Add a selected (N) number of genes
+      Adds a selected (N) number of genes
     Add_Connection(i,j,v)
-      Add a connection (directed edge ij) of a chosen value v in the chosen 
+      Adds a connection (directed edge ij) of a chosen value v in the chosen 
       position in the Connections Matrix (Map_)
     Add_Random_Connection(v)
-      Add a connection between to randome nodes
+      Adds a connection between to random nodes
     SetMap_From_Txt(textfilename)
       Matrix Setter by copy of a text file
     PutMap_Into_Txt(txtfilename)
-      Save the Genom's map in a text file 
+      Saves the Genom's map in a text file 
   """
   
   
@@ -60,7 +60,7 @@ class Genome:
     Parameters
     ----------
     self : class
-      Object Genome creat here
+      Object Genome created here
 
     I : int
       The length of the input vector
@@ -102,14 +102,33 @@ class Genome:
     
   def Copy_Genom(self,model):
     """
-    Modify the current genom to be a copy of the Genom oject "model"
+    Modifies the current genom to be a copy of the Genom object "model"
 
     Parameters
     ----------
     self : class
-      Object Genome who is created
+      Object Genome that is created
     model : class
       Object Genome to copy
+
+    Examples
+    --------
+    >>> import import numpy as np
+    >>>gm3=Genome(3,2)
+    >>>gm4.Copy_Genom(gm3)
+    >>> gm4.Map_
+    array([[0., 0., 0., 0.],
+       [0., 0., 0., 0.],
+       [0., 0., 0., 0.]])
+    >>> gm4.O_
+    4
+    >>> gm4.I_
+    3
+    >>> gm4.H_
+    0
+    >>> gm4.Hidden_
+    array([], dtype=float64)
+    
     """    
     self.O_=model.O_  
     
@@ -132,7 +151,14 @@ class Genome:
     self : class
       Object Genome
     Matrix : np_Array
-      The matrice of conecion
+      The matrix of conecion
+      
+    Examples
+    --------
+    >>>gm2=Genome(2,2)
+    >>>gm2.Set_Map(np.array([[1, 2], [3, 4]]))
+    >>>gm2.Map_
+    np.array([[1, 2], [3, 4]])
 
     """
     self.H_=len(Matrix)-self.I_
@@ -141,8 +167,8 @@ class Genome:
 
   def Processing(self,Input):
     """
-    Product vector of decision (output vector) based on a its state 
-    (hiden vector) and environment (input vector) with the connection 
+    Product decision vector (output vector) based on a its state 
+    (hidden vector) and environment (input vector) with the connection 
     matrix
     
     Parameters
@@ -156,6 +182,13 @@ class Genome:
     --------
     np_Array
       a list of decision (output vector)
+    
+    Examples
+    --------
+    >>>gm3=Genome(2,4)
+    >>>gm3.Set_Map(np.array([[0,1,0,1],[1,0,1,0]]))
+    >>>gm3.Processing(np.array([0,1]))
+    np.array([True,False,True,False])
     """
     Out=(np.concatenate((Input,self.Hidden_),axis=None).dot(self.Map_))>0  
     self.Hidden_=1*Out[self.O_:self.O_+self.H_]
@@ -163,14 +196,23 @@ class Genome:
 
   def Add_Gene(self):
     """
-    This methode add a new gene, an intermediary hidden node between the input 
+    This method adds a new gene, an intermediary hidden node between the input 
     and the output. 
-    It improve the lenght of Hidden and H by one
+    It increases the lenght of Hidden and H by one
 
     Parameters
     ----------
     self : class
       Object Genome
+    
+    Examples
+    --------
+    >>>gm5=Genome(2,4)
+    >>>gm5.Add_Gene()
+    >>>gm5.H_
+    1
+    >>>gm5.Hidden_
+    np.array([0])
     """
 
     self.H_+=1
@@ -181,12 +223,23 @@ class Genome:
     
   def Remote_Last_Gene(self):
     """
-    Remove the last gene and reduce the genome's length by 1
+    Removes the last gene and reduces the genome's length by 1
 
     Parameters
     ----------
     self : class
       Object Genome
+    
+    Examples
+    --------
+    >>>gm5=Genome(2,4)
+    >>>gm5.Add_Gene()
+    >>>gm5.Add_Gene()
+    >>>gm5.Remote_Last_Gene()
+    >>>gm5.H_
+    1
+    >>>gm5.Hidden_
+    np.array([0])
     """
     if self.H_!=0:
       self.H_=self.H_-1
@@ -197,7 +250,7 @@ class Genome:
     
   def Add_Genes(self, Number_Of_Genes):
     """
-    Add a selected number of genes
+    Adds a selected number of genes
     
     Parameters
     ----------
@@ -206,6 +259,22 @@ class Genome:
 
     Number_Of_Genes : int
       The number of gene to insert in the Genome
+    
+    Examples
+    --------
+    >>>gm6=Genome(2,4)
+    >>>gm6.Set_Map(np.array([[0,1,0,1],[1,0,1,0]]))
+    >>>gm6.Add_Genes(3)
+    >>>gm6.H_
+    3
+    >>>gm5.Hidden_
+    np.array([[0,0,0],[0,0,0],[0,0,0]])
+    >>>gm6.O_
+    4
+    >>>gm6.I_
+    2
+    >>>gm6.Map_
+    np.array([[0,1,0,1,0,0,0],[1,0,1,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]])
     """
 
     for i in range(Number_Of_Genes):
@@ -213,7 +282,7 @@ class Genome:
       
   def Add_Connection(self,Source,Target,Value=1):
     """
-    Add a connection (directed edge) of a chosen value in the chosen position 
+    Adds a connection (directed edge) of a chosen value in the chosen position 
     in the Connections Matrix (Map_)
     
     Parameters
@@ -222,13 +291,20 @@ class Genome:
       Object Genome
 
     Source : int
-      row position in Map_, the begining of the edge connection
+      row position in Map_, the beginning of the edge connection
 
     Target : int
       column position in Map_, the end of the  edge connection
 
     Value : int
       the weight of the edge connection. By default, equal to 1
+    
+    Examples
+    --------
+    >>>gm7=Genome(2,4)
+    >>>gm7.Add_Connection(0,3,-8)
+    >>>gm7.Map_[0,3]
+    -8
     """
     self.Map_[Source,Target]=Value
     
@@ -242,13 +318,28 @@ class Genome:
       Object Genome
     Value : int
       the weight of the edge connection. By default, equal to 1
+      
+    Examples
+    --------
+    >>>gm8=Genome(1,4)
+    >>>gm8.Add_Random_Connection()
+    >>>for i in range(4):
+    ... if gm8.Map_[0,i]==1:
+    ...   print(True)
+    True
+    >>>gm8.Add_Random_Connection(-2.5)
+    >>>for i in range(4):
+    ... if gm8.Map_[0,i]==-2.5:
+    ...   print(True)
+    True
+   
     """
     self.Add_Connection(int(np.random.random()*(self.H_+self.I_)),int(np.random.random()*(self.H_+self.O_)),Value) # Add a connection of a chosen value in a random position in the Connections Matrix 
    
   def SetMap_From_Txt(self,namefile):
     """
     Retrieves a matrix in a txt file and atrributes it to 
-    the Map_ attribute of the current Genom object
+    the Map_ attribute of the current Genome object
   
     Parameters
     ----------
@@ -256,20 +347,20 @@ class Genome:
       Object Genome
     
     namefile : str
-      The name of the file which contain the Matrix
+      The name of the file which contains the Matrix
     """
     self.Set_Map(np.loadtxt(namefile))
     
   def PutMap_Into_Txt(self, namefile):
     """
-    Retrieves the Map_ of the current Genom object and writes it into a file txt
+    Retrieves the Map_ of the current Genome object and writes it into a file txt
   
     Parameters
     ----------
     self : class
       Object Genome
     namefile : str
-      The name of the file which will be creat and stock the Matrix
+      The name of the file which will be created and stock the Matrix
     """
     namefile=namefile+".txt"
     np.savetxt(namefile, self.Map_, fmt='%d')
