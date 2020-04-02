@@ -8,21 +8,8 @@ Created on Fri Apr  5 08:23:06 2019
 import numpy as np
 
 class Genome:
-  def __init__(self,I=25,O=3):  
-    """
-    Default Contructor
-    
-    Parameters
-    ----------
-    self : class
-      Object Genome creat here
-
-    I : int
-      The length of the input vector
-    O : int
-      The length of the output vector, a list of int
-      
-    Attributes
+  """
+  Attributes
     ----------
     O_ : int 
       the range of the output vector
@@ -63,7 +50,43 @@ class Genome:
       Matrix Setter by copy of a text file
     PutMap_Into_Txt(txtfilename)
       Save the Genom's map in a text file 
+  """
+  
+  
+  def __init__(self,I=25,O=3):  
+    """
+    Default Contructor
     
+    Parameters
+    ----------
+    self : class
+      Object Genome creat here
+
+    I : int
+      The length of the input vector
+    O : int
+      The length of the output vector, a list of int
+      
+    Examples
+    --------
+    >>> import import numpy as np
+    >>> gm=Genome(3,4)
+    >>> gm=Genome(3,10)
+    >>> gm.Map_
+    array([[0., 0., 0., 0.],
+       [0., 0., 0., 0.],
+       [0., 0., 0., 0.]])
+    >>> gm.O_
+    4
+    >>> gm.I_
+    3
+    >>> gm.H_
+    0
+    >>> gm.Hidden_
+    array([], dtype=float64)
+  
+    
+
     
     
     """
