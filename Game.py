@@ -200,8 +200,8 @@ class Game:
     """
     Create a new generation of individual from the descending sort population.
     Two methode are possible :
-      - Methode 0 : only the best individual can have children, it is him genome who is mutate
-      - Methode 1 : the 50% best individuals have children by mutation of them genome
+    - Methode 0 : only the best individual can have children, it is him genome who is mutate
+    - Methode 1 : the 50% best individuals have children by mutation of them genome
     By default the choosen methode is the methode 0
 
     Parameters
@@ -441,8 +441,8 @@ class Game:
     """
     Calculate the time to solve the game
     Two methode of children are possible :
-      - Methode 0 : only the best individual can have children, it is him genome who is mutate
-      - Methode 1 : the 50% best individuals have children by mutation of them genome
+    - Methode 0 : only the best individual can have children, it is him genome who is mutate
+    - Methode 1 : the 50% best individuals have children by mutation of them genome
 
     Parameters
     ----------

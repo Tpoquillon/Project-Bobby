@@ -9,7 +9,7 @@ import numpy as np
 
 class Genome:
   """
-  Attributes
+    Attributes
     ----------
     O_ : int 
       the range of the output vector
@@ -43,7 +43,7 @@ class Genome:
       Adds a selected (N) number of genes
     Add_Connection(i,j,v)
       Adds a connection (directed edge ij) of a chosen value v in the chosen 
-      position in the Connections Matrix (Map_)
+      position in the Connections Matrix (Map)
     Add_Random_Connection(v)
       Adds a connection between to random nodes
     SetMap_From_Txt(textfilename)
@@ -84,11 +84,6 @@ class Genome:
     0
     >>> gm.Hidden_
     array([], dtype=float64)
-  
-    
-
-    
-    
     """
     self.O_=O  #range of the Output vector
     
@@ -116,19 +111,16 @@ class Genome:
     >>>import import numpy as np
     >>>gm3=Genome(3,2)
     >>>gm4.Copy_Genom(gm3)
-    >>> gm4.Map_
-    array([[0., 0., 0., 0.],
-       [0., 0., 0., 0.],
-       [0., 0., 0., 0.]])
-    >>> gm4.O_
+    >>>gm4.Map
+    array([[0., 0., 0., 0.], [0., 0., 0., 0.], [0., 0., 0., 0.]])
+    >>> gm4.O
     4
-    >>> gm4.I_
+    >>> gm4.I
     3
-    >>> gm4.H_
+    >>> gm4.H
     0
-    >>> gm4.Hidden_
+    >>> gm4.Hidden
     array([], dtype=float64)
-    
     """    
     self.O_=model.O_  
     
@@ -160,7 +152,6 @@ class Genome:
     >>>gm2.Set_Map(np.array([[1, 2], [3, 4]]))
     >>>gm2.Map_
     np.array([[1, 2], [3, 4]])
-
     """
     self.H_=len(Matrix)-self.I_
     self.Hidden_=np.zeros((1,self.H_))
@@ -288,7 +279,7 @@ class Genome:
   def Add_Connection(self,Source,Target,Value=1):
     """
     Adds a connection (directed edge) of a chosen value in the chosen position 
-    in the Connections Matrix (Map_)
+    in the Connections Matrix (Map)
     
     Parameters
     ----------
@@ -296,10 +287,10 @@ class Genome:
       Object Genome
 
     Source : int
-      row position in Map_, the beginning of the edge connection
+      row position in Map, the beginning of the edge connection
 
     Target : int
-      column position in Map_, the end of the  edge connection
+      column position in Map, the end of the  edge connection
 
     Value : int
       the weight of the edge connection. By default, equal to 1
@@ -316,7 +307,7 @@ class Genome:
     
   def Add_Random_Connection(self,Value=1):
     """
-    Add a connection at a random position in Map_ for a choosen value
+    Add a connection at a random position in Map for a choosen value
 
     Parameters
     ----------
@@ -346,7 +337,7 @@ class Genome:
   def SetMap_From_Txt(self,namefile):
     """
     Retrieves a matrix in a txt file and atrributes it to 
-    the Map_ attribute of the current Genome object
+    the Map attribute of the current Genome object
   
     Parameters
     ----------
@@ -360,7 +351,7 @@ class Genome:
     
   def PutMap_Into_Txt(self, namefile):
     """
-    Retrieves the Map_ of the current Genome object and writes it into a file txt
+    Retrieves the Map of the current Genome object and writes it into a file txt
   
     Parameters
     ----------

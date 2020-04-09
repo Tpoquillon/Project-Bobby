@@ -10,10 +10,11 @@ import numpy as np
 import Genome
 import math as mt
 class Agent:
-  def __init__(self,x,y,myGenome,grid):#Constructor which takes an existing genome, a grid and a position wanted for the Agent on this grid
+  def __init__(self,x,y,myGenome,grid):
     """
     Default Contructor
-    
+    Constructor which takes an existing genome, a grid and a position wanted for the Agent on this grid
+
     Parameters
     ----------
     self : class
@@ -133,8 +134,8 @@ class Agent:
     
   def Make_Decision(self):
     """
-    Make_Decision methode, that uses the Agent Environment_ and Genome_ to updat
-    its decision_. See Genome.Processing
+    Make_Decision methode, that uses the Agent Environment and Genome to updat
+    its decision See Genome.Processing
     
     Parameters
     ----------
@@ -149,7 +150,7 @@ class Agent:
   
   def Mutate(self,mute_max,add_conect_prob): #Methode qui permet de muter le génome d'un Agent jusque à mute_max fois, ajoutant des conections ou des gènes
     """
-    Randomly mutate the Agent Genome_. 
+    Randomly mutate the Agent Genome. 
     See Genome.Add_Random_Connection , Genome.Add_Gene 
     and Genome.Remote_Last_Gene
     
