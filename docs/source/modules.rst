@@ -1,12 +1,10 @@
-Softwear-Deployment
-===================
+package
+=======
 
 .. toctree::
    :maxdepth: 4
 
-   Affichage
    Agent
    Game
    Genome
-   Tests
    ViewWorld

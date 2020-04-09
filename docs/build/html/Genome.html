@@ -40,38 +40,185 @@
 <dt id="Genome.Genome">
 <em class="property">class </em><code class="sig-prename descclassname">Genome.</code><code class="sig-name descname">Genome</code><span class="sig-paren">(</span><em class="sig-param">I=25</em>, <em class="sig-param">O=3</em><span class="sig-paren">)</span><a class="headerlink" href="#Genome.Genome" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="method">
-<dt id="Genome.Genome.Add_Connection">
-<code class="sig-name descname">Add_Connection</code><span class="sig-paren">(</span><em class="sig-param">Source</em>, <em class="sig-param">Target</em>, <em class="sig-param">Value=1</em><span class="sig-paren">)</span><a class="headerlink" href="#Genome.Genome.Add_Connection" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add a connection of a chosen value in the chosen position in the Connections Matrix</p>
+<dl class="attribute">
+<dt id="Genome.Genome.O_">
+<code class="sig-name descname">O_</code><a class="headerlink" href="#Genome.Genome.O_" title="Permalink to this definition">¶</a></dt>
+<dd><p>the range of the output vector</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>self</strong> (<em>class</em>) – Object Genome</p></li>
-<li><p><strong>Source</strong> (<em>int</em>) – Position a gene</p></li>
-<li><p><strong>Target</strong> (<em>int</em>) – Position of the target in the gene</p></li>
-<li><p><strong>Value</strong> (<em>int</em>) – By default, equal to 1</p></li>
-</ul>
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="attribute">
+<dt id="Genome.Genome.I_">
+<code class="sig-name descname">I_</code><a class="headerlink" href="#Genome.Genome.I_" title="Permalink to this definition">¶</a></dt>
+<dd><p>the range of the input vector</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Genome.Genome.H_">
+<code class="sig-name descname">H_</code><a class="headerlink" href="#Genome.Genome.H_" title="Permalink to this definition">¶</a></dt>
+<dd><p>the range of the hidden vector</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Genome.Genome.Hidden_">
+<code class="sig-name descname">Hidden_</code><a class="headerlink" href="#Genome.Genome.Hidden_" title="Permalink to this definition">¶</a></dt>
+<dd><p>the hidden boolean vector describing the state of each hidden node.
+1 is active and 0 is inactive</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>np_Array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Genome.Genome.Map_">
+<code class="sig-name descname">Map_</code><a class="headerlink" href="#Genome.Genome.Map_" title="Permalink to this definition">¶</a></dt>
+<dd><p>the conection matrice linking the input , output  and hidden vector.
+this is the brain of our AI</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>np_Array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Genome.Genome.Methodes">
+<code class="sig-name descname">Methodes</code><a class="headerlink" href="#Genome.Genome.Methodes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">--------</code></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Genome.Genome.Copy_Genome">
+<code class="sig-name descname">Copy_Genome</code><span class="sig-paren">(</span><em class="sig-param">model</em><span class="sig-paren">)</span><a class="headerlink" href="#Genome.Genome.Copy_Genome" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modifies the current genom to be a copy of the Genom oject “model”</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Genome.Genome.Set_Map">
+<code class="sig-name descname">Set_Map</code><span class="sig-paren">(</span><em class="sig-param">Matrix</em><span class="sig-paren">)</span><a class="headerlink" href="#Genome.Genome.Set_Map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Matrix Setter by copy of an np_Array</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Genome.Genome.Processing">
+<code class="sig-name descname">Processing</code><span class="sig-paren">(</span><em class="sig-param">input</em><span class="sig-paren">)</span><a class="headerlink" href="#Genome.Genome.Processing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Product decision vector (output vector) based on a its state
+(hidden vector) and environment (input vector) with the connection
+matrix</p>
+</dd></dl>
+
+<dl class="attribute">
 <dt id="Genome.Genome.Add_Gene">
-<code class="sig-name descname">Add_Gene</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Genome.Genome.Add_Gene" title="Permalink to this definition">¶</a></dt>
-<dd><p>This methode add a new gene, an intermediary hidden node between the input and the output.
-It improve the lenght of Hidden and H by one</p>
+<code class="sig-name descname">Add_Gene</code><a class="headerlink" href="#Genome.Genome.Add_Gene" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method adds a new gene, an intermediary hidden node between the
+input and the output. It increases the lenght of Hidden and H by one</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Genome.Genome.Remote_Last_Gene">
+<code class="sig-name descname">Remote_Last_Gene</code><a class="headerlink" href="#Genome.Genome.Remote_Last_Gene" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the last gene and reduces the genome’s length by 1</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Genome.Genome.Add_Genes">
+<code class="sig-name descname">Add_Genes</code><span class="sig-paren">(</span><em class="sig-param">N</em><span class="sig-paren">)</span><a class="headerlink" href="#Genome.Genome.Add_Genes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a selected (N) number of genes</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Genome.Genome.Add_Connection">
+<code class="sig-name descname">Add_Connection</code><span class="sig-paren">(</span><em class="sig-param">i</em>, <em class="sig-param">j</em>, <em class="sig-param">v</em><span class="sig-paren">)</span><a class="headerlink" href="#Genome.Genome.Add_Connection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a connection (directed edge ij) of a chosen value v in the chosen
+position in the Connections Matrix (Map)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Genome.Genome.Add_Random_Connection">
+<code class="sig-name descname">Add_Random_Connection</code><span class="sig-paren">(</span><em class="sig-param">v</em><span class="sig-paren">)</span><a class="headerlink" href="#Genome.Genome.Add_Random_Connection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a connection between to random nodes</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Genome.Genome.SetMap_From_Txt">
+<code class="sig-name descname">SetMap_From_Txt</code><span class="sig-paren">(</span><em class="sig-param">textfilename</em><span class="sig-paren">)</span><a class="headerlink" href="#Genome.Genome.SetMap_From_Txt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Matrix Setter by copy of a text file</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Genome.Genome.PutMap_Into_Txt">
+<code class="sig-name descname">PutMap_Into_Txt</code><span class="sig-paren">(</span><em class="sig-param">txtfilename</em><span class="sig-paren">)</span><a class="headerlink" href="#Genome.Genome.PutMap_Into_Txt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the Genom’s map in a text file</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="sig-name descname">Add_Connection</code><span class="sig-paren">(</span><em class="sig-param">Source</em>, <em class="sig-param">Target</em>, <em class="sig-param">Value=1</em><span class="sig-paren">)</span></dt>
+<dd><p>Adds a connection (directed edge) of a chosen value in the chosen position
+in the Connections Matrix (Map)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<em>class</em>) – Object Genome</p></li>
+<li><p><strong>Source</strong> (<em>int</em>) – row position in Map, the beginning of the edge connection</p></li>
+<li><p><strong>Target</strong> (<em>int</em>) – column position in Map, the end of the  edge connection</p></li>
+<li><p><strong>Value</strong> (<em>int</em>) – the weight of the edge connection. By default, equal to 1</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>&gt;&gt;&gt;import import numpy as np
+&gt;&gt;&gt;gm7=Genome(2,4)
+&gt;&gt;&gt;gm7.Add_Connection(0,3,-8)
+&gt;&gt;&gt;gm7.Map_[0,3]
+-8</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="sig-name descname">Add_Gene</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>This method adds a new gene, an intermediary hidden node between the input
+and the output.
+It increases the lenght of Hidden and H by one</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>self</strong> (<em>class</em>) – Object Genome</p>
 </dd>
 </dl>
+<p class="rubric">Examples</p>
+<p>&gt;&gt;&gt;import import numpy as np
+&gt;&gt;&gt;gm5=Genome(2,4)
+&gt;&gt;&gt;gm5.Add_Gene()
+&gt;&gt;&gt;gm5.H_
+1
+&gt;&gt;&gt;gm5.Hidden_
+np.array([0])</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="Genome.Genome.Add_Genes">
-<code class="sig-name descname">Add_Genes</code><span class="sig-paren">(</span><em class="sig-param">Number_Of_Genes</em><span class="sig-paren">)</span><a class="headerlink" href="#Genome.Genome.Add_Genes" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add a selected number of genes</p>
+<dt>
+<code class="sig-name descname">Add_Genes</code><span class="sig-paren">(</span><em class="sig-param">Number_Of_Genes</em><span class="sig-paren">)</span></dt>
+<dd><p>Adds a selected number of genes</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -80,107 +227,174 @@ It improve the lenght of Hidden and H by one</p>
 </ul>
 </dd>
 </dl>
+<p class="rubric">Examples</p>
+<p>&gt;&gt;&gt;import import numpy as np
+&gt;&gt;&gt;gm6=Genome(2,4)
+&gt;&gt;&gt;gm6.Set_Map(np.array([[0,1,0,1],[1,0,1,0]]))
+&gt;&gt;&gt;gm6.Add_Genes(3)
+&gt;&gt;&gt;gm6.H_
+3
+&gt;&gt;&gt;gm5.Hidden_
+np.array([[0,0,0],[0,0,0],[0,0,0]])
+&gt;&gt;&gt;gm6.O_
+4
+&gt;&gt;&gt;gm6.I_
+2
+&gt;&gt;&gt;gm6.Map_
+np.array([[0,1,0,1,0,0,0],[1,0,1,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]])</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="Genome.Genome.Add_Random_Connection">
-<code class="sig-name descname">Add_Random_Connection</code><span class="sig-paren">(</span><em class="sig-param">Value=1</em><span class="sig-paren">)</span><a class="headerlink" href="#Genome.Genome.Add_Random_Connection" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add a random connection</p>
+<dt>
+<code class="sig-name descname">Add_Random_Connection</code><span class="sig-paren">(</span><em class="sig-param">Value=1</em><span class="sig-paren">)</span></dt>
+<dd><p>Add a connection at a random position in Map for a choosen value</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>self</strong> (<em>class</em>) – Object Genome</p></li>
-<li><p><strong>Value</strong> (<em>int</em>) – By default, equal to 1</p></li>
+<li><p><strong>Value</strong> (<em>int</em>) – the weight of the edge connection. By default, equal to 1</p></li>
 </ul>
 </dd>
 </dl>
+<p class="rubric">Examples</p>
+<p>&gt;&gt;&gt;import import numpy as np
+&gt;&gt;&gt;gm8=Genome(1,4)
+&gt;&gt;&gt;gm8.Add_Random_Connection()
+&gt;&gt;&gt;for i in range(4):
+… if gm8.Map_[0,i]==1:
+…   print(True)
+True
+&gt;&gt;&gt;gm8.Add_Random_Connection(-2.5)
+&gt;&gt;&gt;for i in range(4):
+… if gm8.Map_[0,i]==-2.5:
+…   print(True)
+True</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="Genome.Genome.Copy_Genom">
 <code class="sig-name descname">Copy_Genom</code><span class="sig-paren">(</span><em class="sig-param">model</em><span class="sig-paren">)</span><a class="headerlink" href="#Genome.Genome.Copy_Genom" title="Permalink to this definition">¶</a></dt>
-<dd><p>Modify the current genom to be a copy of the Genom oject “model”</p>
+<dd><p>Modifies the current genom to be a copy of the Genom object “model”</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>self</strong> (<em>class</em>) – Object Genome who is created</p></li>
+<li><p><strong>self</strong> (<em>class</em>) – Object Genome that is created</p></li>
 <li><p><strong>model</strong> (<em>class</em>) – Object Genome to copy</p></li>
 </ul>
 </dd>
 </dl>
+<p class="rubric">Examples</p>
+<p>&gt;&gt;&gt;import import numpy as np
+&gt;&gt;&gt;gm3=Genome(3,2)
+&gt;&gt;&gt;gm4.Copy_Genom(gm3)
+&gt;&gt;&gt;gm4.Map
+array([[0., 0., 0., 0.], [0., 0., 0., 0.], [0., 0., 0., 0.]])
+&gt;&gt;&gt; gm4.O
+4
+&gt;&gt;&gt; gm4.I
+3
+&gt;&gt;&gt; gm4.H
+0
+&gt;&gt;&gt; gm4.Hidden
+array([], dtype=float64)</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="Genome.Genome.Processing">
-<code class="sig-name descname">Processing</code><span class="sig-paren">(</span><em class="sig-param">Input</em><span class="sig-paren">)</span><a class="headerlink" href="#Genome.Genome.Processing" title="Permalink to this definition">¶</a></dt>
-<dd><p>Product vector of decision based on a vector of actions passed as a parameter</p>
+<dt>
+<code class="sig-name descname">Processing</code><span class="sig-paren">(</span><em class="sig-param">Input</em><span class="sig-paren">)</span></dt>
+<dd><p>Product decision vector (output vector) based on a its state
+(hidden vector) and environment (input vector) with the connection
+matrix</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>self</strong> (<em>class</em>) – Object Genome</p></li>
-<li><p><strong>Input</strong> (<em>list</em>) – vector of actions</p></li>
+<li><p><strong>Input</strong> (<em>np_Array</em>) – A vector describing the environment</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>vector of decision</p>
+<dd class="field-even"><p>a list of decision (output vector)</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>list</p>
+<dd class="field-odd"><p>np_Array</p>
 </dd>
 </dl>
+<p class="rubric">Examples</p>
+<p>&gt;&gt;&gt;import import numpy as np
+&gt;&gt;&gt;gm3=Genome(2,4)
+&gt;&gt;&gt;gm3.Set_Map(np.array([[0,1,0,1],[1,0,1,0]]))
+&gt;&gt;&gt;gm3.Processing(np.array([0,1]))
+np.array([True,False,True,False])</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="Genome.Genome.PutMap_Into_Txt">
-<code class="sig-name descname">PutMap_Into_Txt</code><span class="sig-paren">(</span><em class="sig-param">namefile</em><span class="sig-paren">)</span><a class="headerlink" href="#Genome.Genome.PutMap_Into_Txt" title="Permalink to this definition">¶</a></dt>
-<dd><p>Retrieves the <a href="#id1"><span class="problematic" id="id2">Map_</span></a> of the current Genom object and writes it into a file txt</p>
+<dt>
+<code class="sig-name descname">PutMap_Into_Txt</code><span class="sig-paren">(</span><em class="sig-param">namefile</em><span class="sig-paren">)</span></dt>
+<dd><p>Retrieves the Map of the current Genome object and writes it into a file txt</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>self</strong> (<em>class</em>) – Object Genome</p></li>
-<li><p><strong>namefile</strong> (<em>str</em>) – The name of the file which will be creat and stock the Matrix</p></li>
+<li><p><strong>namefile</strong> (<em>str</em>) – The name of the file which will be created and stock the Matrix</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="method">
-<dt id="Genome.Genome.Remote_Last_Gene">
-<code class="sig-name descname">Remote_Last_Gene</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Genome.Genome.Remote_Last_Gene" title="Permalink to this definition">¶</a></dt>
-<dd><p>Remove the last gene and reduce the genome’s length by 1</p>
+<dt>
+<code class="sig-name descname">Remote_Last_Gene</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Removes the last gene and reduces the genome’s length by 1</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>self</strong> (<em>class</em>) – Object Genome</p>
 </dd>
 </dl>
+<p class="rubric">Examples</p>
+<p>&gt;&gt;&gt;import import numpy as np
+&gt;&gt;&gt;gm5=Genome(2,4)
+&gt;&gt;&gt;gm5.Add_Gene()
+&gt;&gt;&gt;gm5.Add_Gene()
+&gt;&gt;&gt;gm5.Remote_Last_Gene()
+&gt;&gt;&gt;gm5.H_
+1
+&gt;&gt;&gt;gm5.Hidden_
+np.array([0])</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="Genome.Genome.SetMap_From_Txt">
-<code class="sig-name descname">SetMap_From_Txt</code><span class="sig-paren">(</span><em class="sig-param">namefile</em><span class="sig-paren">)</span><a class="headerlink" href="#Genome.Genome.SetMap_From_Txt" title="Permalink to this definition">¶</a></dt>
-<dd><p>Retrieves a matrix in a txt file and atrributes it to the <a href="#id3"><span class="problematic" id="id4">Map_</span></a> attribute of the current Genom object</p>
+<dt>
+<code class="sig-name descname">SetMap_From_Txt</code><span class="sig-paren">(</span><em class="sig-param">namefile</em><span class="sig-paren">)</span></dt>
+<dd><p>Retrieves a matrix in a txt file and atrributes it to
+the Map attribute of the current Genome object</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>self</strong> (<em>class</em>) – Object Genome</p></li>
-<li><p><strong>namefile</strong> (<em>str</em>) – The name of the file which contain the Matrix</p></li>
+<li><p><strong>namefile</strong> (<em>str</em>) – The name of the file which contains the Matrix</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="method">
-<dt id="Genome.Genome.Set_Map">
-<code class="sig-name descname">Set_Map</code><span class="sig-paren">(</span><em class="sig-param">Matrix</em><span class="sig-paren">)</span><a class="headerlink" href="#Genome.Genome.Set_Map" title="Permalink to this definition">¶</a></dt>
+<dt>
+<code class="sig-name descname">Set_Map</code><span class="sig-paren">(</span><em class="sig-param">Matrix</em><span class="sig-paren">)</span></dt>
 <dd><p>Matrix Setter by copy</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>self</strong> (<em>class</em>) – Object Genome</p></li>
-<li><p><strong>Matrix</strong> (<em>list</em>) – A list of list of int</p></li>
+<li><p><strong>Matrix</strong> (<em>np_Array</em>) – The matrix of conecion</p></li>
 </ul>
 </dd>
 </dl>
+<p class="rubric">Examples</p>
+<p>&gt;&gt;&gt;import import numpy as np
+&gt;&gt;&gt;gm2=Genome(2,2)
+&gt;&gt;&gt;gm2.Set_Map(np.array([[1, 2], [3, 4]]))
+&gt;&gt;&gt;gm2.Map_
+np.array([[1, 2], [3, 4]])</p>
 </dd></dl>
 
 </dd></dl>
@@ -204,7 +418,7 @@ It improve the lenght of Hidden and H by one</p>
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
+<p class="caption"><span class="caption-text">Content</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Agent.html">Agent module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Game.html">Game module</a></li>

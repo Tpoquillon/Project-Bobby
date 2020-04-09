@@ -19,7 +19,7 @@
 
 project = 'Software Developpement Bobby'
 copyright = '2020, Floreau Poquillon Sorin'
-author = 'Cirot Floreau Lemonnier Panneau Poquillon Sorin'
+author = 'Titouan Poquillon, Armande Cirot, Claire Lemonnier, Guilhem Panneau, Julian Floreau, Baptiste Sorin'
 
 # The full version, including alpha/beta/rc tags
 release = '0'

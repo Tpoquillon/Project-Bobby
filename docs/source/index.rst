@@ -1,17 +1,17 @@
 .. Software Developpement documentation master file, created by
-   sphinx-quickstart on Thu Mar 26 08:20:39 2020.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+   Floreau Julian, Baptiste Sorin, Titouan Poquillon on Thu Mar 26 08:20:39 2020.
 
-Welcome to Software Developpement's documentation!
+Welcome to Bobby's documentation!
 ==================================================
-.. image:: _static/LogoBooby.svg
+.. image:: _static/LogoBobby.svg
    :width: 150
    :align: center
 
+Documentation
+================
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Content
 
    Agent
    Game
