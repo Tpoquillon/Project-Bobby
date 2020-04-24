@@ -8,5 +8,3 @@ package
    Game
    Genome
    ViewWorld
-   README
-   LICENSE

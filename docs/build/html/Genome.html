@@ -187,11 +187,13 @@ in the Connections Matrix (Map)</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>&gt;&gt;&gt;import import numpy as np
-&gt;&gt;&gt;gm7=Genome(2,4)
-&gt;&gt;&gt;gm7.Add_Connection(0,3,-8)
-&gt;&gt;&gt;gm7.Map_[0,3]
--8</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm7</span><span class="o">=</span><span class="n">Genome</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm7</span><span class="o">.</span><span class="n">Add_Connection</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">8</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm7</span><span class="o">.</span><span class="n">Map_</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="go">-8</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -206,13 +208,15 @@ It increases the lenght of Hidden and H by one</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>&gt;&gt;&gt;import import numpy as np
-&gt;&gt;&gt;gm5=Genome(2,4)
-&gt;&gt;&gt;gm5.Add_Gene()
-&gt;&gt;&gt;gm5.H_
-1
-&gt;&gt;&gt;gm5.Hidden_
-np.array([0])</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm5</span><span class="o">=</span><span class="n">Genome</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm5</span><span class="o">.</span><span class="n">Add_Gene</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm5</span><span class="o">.</span><span class="n">H_</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm5</span><span class="o">.</span><span class="n">Hidden_</span>
+<span class="go">np.array([0])</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -228,20 +232,22 @@ np.array([0])</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>&gt;&gt;&gt;import import numpy as np
-&gt;&gt;&gt;gm6=Genome(2,4)
-&gt;&gt;&gt;gm6.Set_Map(np.array([[0,1,0,1],[1,0,1,0]]))
-&gt;&gt;&gt;gm6.Add_Genes(3)
-&gt;&gt;&gt;gm6.H_
-3
-&gt;&gt;&gt;gm5.Hidden_
-np.array([[0,0,0],[0,0,0],[0,0,0]])
-&gt;&gt;&gt;gm6.O_
-4
-&gt;&gt;&gt;gm6.I_
-2
-&gt;&gt;&gt;gm6.Map_
-np.array([[0,1,0,1,0,0,0],[1,0,1,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]])</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm6</span><span class="o">=</span><span class="n">Genome</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm6</span><span class="o">.</span><span class="n">Set_Map</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm6</span><span class="o">.</span><span class="n">Add_Genes</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm6</span><span class="o">.</span><span class="n">H_</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm5</span><span class="o">.</span><span class="n">Hidden_</span>
+<span class="go">np.array([[0,0,0],[0,0,0],[0,0,0]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm6</span><span class="o">.</span><span class="n">O_</span>
+<span class="go">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm6</span><span class="o">.</span><span class="n">I_</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm6</span><span class="o">.</span><span class="n">Map_</span>
+<span class="go">np.array([[0,1,0,1,0,0,0],[1,0,1,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]])</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -257,18 +263,20 @@ np.array([[0,1,0,1,0,0,0],[1,0,1,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>&gt;&gt;&gt;import import numpy as np
-&gt;&gt;&gt;gm8=Genome(1,4)
-&gt;&gt;&gt;gm8.Add_Random_Connection()
-&gt;&gt;&gt;for i in range(4):
-… if gm8.Map_[0,i]==1:
-…   print(True)
-True
-&gt;&gt;&gt;gm8.Add_Random_Connection(-2.5)
-&gt;&gt;&gt;for i in range(4):
-… if gm8.Map_[0,i]==-2.5:
-…   print(True)
-True</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm8</span><span class="o">=</span><span class="n">Genome</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm8</span><span class="o">.</span><span class="n">Add_Random_Connection</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<span class="gp">... </span><span class="k">if</span> <span class="n">gm8</span><span class="o">.</span><span class="n">Map_</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+<span class="gp">... </span>  <span class="nb">print</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm8</span><span class="o">.</span><span class="n">Add_Random_Connection</span><span class="p">(</span><span class="o">-</span><span class="mf">2.5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<span class="gp">... </span><span class="k">if</span> <span class="n">gm8</span><span class="o">.</span><span class="n">Map_</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">i</span><span class="p">]</span><span class="o">==-</span><span class="mf">2.5</span><span class="p">:</span>
+<span class="gp">... </span>  <span class="nb">print</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -284,19 +292,23 @@ True</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>&gt;&gt;&gt;import import numpy as np
-&gt;&gt;&gt;gm3=Genome(3,2)
-&gt;&gt;&gt;gm4.Copy_Genom(gm3)
-&gt;&gt;&gt;gm4.Map
-array([[0., 0., 0., 0.], [0., 0., 0., 0.], [0., 0., 0., 0.]])
-&gt;&gt;&gt; gm4.O
-4
-&gt;&gt;&gt; gm4.I
-3
-&gt;&gt;&gt; gm4.H
-0
-&gt;&gt;&gt; gm4.Hidden
-array([], dtype=float64)</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm3</span><span class="o">=</span><span class="n">Genome</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm4</span><span class="o">.</span><span class="n">Copy_Genom</span><span class="p">(</span><span class="n">gm3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm4</span><span class="o">.</span><span class="n">Map</span>
+<span class="go">  array([[0., 0., 0., 0.],</span>
+<span class="go">  [0., 0., 0., 0.],</span>
+<span class="go">  [0., 0., 0., 0.]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm4</span><span class="o">.</span><span class="n">O</span>
+<span class="go">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm4</span><span class="o">.</span><span class="n">I</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm4</span><span class="o">.</span><span class="n">H</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm4</span><span class="o">.</span><span class="n">Hidden</span>
+<span class="go">array([], dtype=float64)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -320,11 +332,13 @@ matrix</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>&gt;&gt;&gt;import import numpy as np
-&gt;&gt;&gt;gm3=Genome(2,4)
-&gt;&gt;&gt;gm3.Set_Map(np.array([[0,1,0,1],[1,0,1,0]]))
-&gt;&gt;&gt;gm3.Processing(np.array([0,1]))
-np.array([True,False,True,False])</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm3</span><span class="o">=</span><span class="n">Genome</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm3</span><span class="o">.</span><span class="n">Set_Map</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm3</span><span class="o">.</span><span class="n">Processing</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]))</span>
+<span class="go">np.array([True,False,True,False])</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -351,15 +365,17 @@ np.array([True,False,True,False])</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>&gt;&gt;&gt;import import numpy as np
-&gt;&gt;&gt;gm5=Genome(2,4)
-&gt;&gt;&gt;gm5.Add_Gene()
-&gt;&gt;&gt;gm5.Add_Gene()
-&gt;&gt;&gt;gm5.Remote_Last_Gene()
-&gt;&gt;&gt;gm5.H_
-1
-&gt;&gt;&gt;gm5.Hidden_
-np.array([0])</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm5</span><span class="o">=</span><span class="n">Genome</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm5</span><span class="o">.</span><span class="n">Add_Gene</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm5</span><span class="o">.</span><span class="n">Add_Gene</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm5</span><span class="o">.</span><span class="n">Remote_Last_Gene</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm5</span><span class="o">.</span><span class="n">H_</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm5</span><span class="o">.</span><span class="n">Hidden_</span>
+<span class="go">np.array([0])</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -390,11 +406,13 @@ the Map attribute of the current Genome object</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>&gt;&gt;&gt;import import numpy as np
-&gt;&gt;&gt;gm2=Genome(2,2)
-&gt;&gt;&gt;gm2.Set_Map(np.array([[1, 2], [3, 4]]))
-&gt;&gt;&gt;gm2.Map_
-np.array([[1, 2], [3, 4]])</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm2</span><span class="o">=</span><span class="n">Genome</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm2</span><span class="o">.</span><span class="n">Set_Map</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gm2</span><span class="o">.</span><span class="n">Map_</span>
+<span class="go">np.array([[1, 2], [3, 4]])</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
