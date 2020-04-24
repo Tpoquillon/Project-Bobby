@@ -108,11 +108,13 @@ class Genome:
 
     Examples
     --------
-    >>>import import numpy as np
-    >>>gm3=Genome(3,2)
-    >>>gm4.Copy_Genom(gm3)
-    >>>gm4.Map
-    array([[0., 0., 0., 0.], [0., 0., 0., 0.], [0., 0., 0., 0.]])
+    >>> import import numpy as np
+    >>> gm3=Genome(3,2)
+    >>> gm4.Copy_Genom(gm3)
+    >>> gm4.Map
+      array([[0., 0., 0., 0.], 
+      [0., 0., 0., 0.], 
+      [0., 0., 0., 0.]])
     >>> gm4.O
     4
     >>> gm4.I
@@ -147,10 +149,10 @@ class Genome:
       
     Examples
     --------
-    >>>import import numpy as np
-    >>>gm2=Genome(2,2)
-    >>>gm2.Set_Map(np.array([[1, 2], [3, 4]]))
-    >>>gm2.Map_
+    >>> import import numpy as np
+    >>> gm2=Genome(2,2)
+    >>> gm2.Set_Map(np.array([[1, 2], [3, 4]]))
+    >>> gm2.Map_
     np.array([[1, 2], [3, 4]])
     """
     self.H_=len(Matrix)-self.I_
@@ -177,10 +179,10 @@ class Genome:
     
     Examples
     --------
-    >>>import import numpy as np
-    >>>gm3=Genome(2,4)
-    >>>gm3.Set_Map(np.array([[0,1,0,1],[1,0,1,0]]))
-    >>>gm3.Processing(np.array([0,1]))
+    >>> import import numpy as np
+    >>> gm3=Genome(2,4)
+    >>> gm3.Set_Map(np.array([[0,1,0,1],[1,0,1,0]]))
+    >>> gm3.Processing(np.array([0,1]))
     np.array([True,False,True,False])
     """
     Out=(np.concatenate((Input,self.Hidden_),axis=None).dot(self.Map_))>0  
@@ -200,12 +202,12 @@ class Genome:
     
     Examples
     --------
-    >>>import import numpy as np
-    >>>gm5=Genome(2,4)
-    >>>gm5.Add_Gene()
-    >>>gm5.H_
+    >>> import import numpy as np
+    >>> gm5=Genome(2,4)
+    >>> gm5.Add_Gene()
+    >>> gm5.H_
     1
-    >>>gm5.Hidden_
+    >>> gm5.Hidden_
     np.array([0])
     """
 
@@ -226,14 +228,14 @@ class Genome:
     
     Examples
     --------
-    >>>import import numpy as np
-    >>>gm5=Genome(2,4)
-    >>>gm5.Add_Gene()
-    >>>gm5.Add_Gene()
-    >>>gm5.Remote_Last_Gene()
-    >>>gm5.H_
+    >>> import import numpy as np
+    >>> gm5=Genome(2,4)
+    >>> gm5.Add_Gene()
+    >>> gm5.Add_Gene()
+    >>> gm5.Remote_Last_Gene()
+    >>> gm5.H_
     1
-    >>>gm5.Hidden_
+    >>> gm5.Hidden_
     np.array([0])
     """
     if self.H_!=0:
@@ -257,19 +259,19 @@ class Genome:
     
     Examples
     --------
-    >>>import import numpy as np
-    >>>gm6=Genome(2,4)
-    >>>gm6.Set_Map(np.array([[0,1,0,1],[1,0,1,0]]))
-    >>>gm6.Add_Genes(3)
-    >>>gm6.H_
+    >>> import import numpy as np
+    >>> gm6=Genome(2,4)
+    >>> gm6.Set_Map(np.array([[0,1,0,1],[1,0,1,0]]))
+    >>> gm6.Add_Genes(3)
+    >>> gm6.H_
     3
-    >>>gm5.Hidden_
+    >>> gm5.Hidden_
     np.array([[0,0,0],[0,0,0],[0,0,0]])
-    >>>gm6.O_
+    >>> gm6.O_
     4
-    >>>gm6.I_
+    >>> gm6.I_
     2
-    >>>gm6.Map_
+    >>> gm6.Map_
     np.array([[0,1,0,1,0,0,0],[1,0,1,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]])
     """
 
@@ -297,10 +299,10 @@ class Genome:
     
     Examples
     --------
-    >>>import import numpy as np
-    >>>gm7=Genome(2,4)
-    >>>gm7.Add_Connection(0,3,-8)
-    >>>gm7.Map_[0,3]
+    >>> import import numpy as np
+    >>> gm7=Genome(2,4)
+    >>> gm7.Add_Connection(0,3,-8)
+    >>> gm7.Map_[0,3]
     -8
     """
     self.Map_[Source,Target]=Value
@@ -318,15 +320,15 @@ class Genome:
       
     Examples
     --------
-    >>>import import numpy as np
-    >>>gm8=Genome(1,4)
-    >>>gm8.Add_Random_Connection()
-    >>>for i in range(4):
+    >>> import import numpy as np
+    >>> gm8=Genome(1,4)
+    >>> gm8.Add_Random_Connection()
+    >>> for i in range(4):
     ... if gm8.Map_[0,i]==1:
     ...   print(True)
     True
-    >>>gm8.Add_Random_Connection(-2.5)
-    >>>for i in range(4):
+    >>> gm8.Add_Random_Connection(-2.5)
+    >>> for i in range(4):
     ... if gm8.Map_[0,i]==-2.5:
     ...   print(True)
     True
