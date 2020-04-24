@@ -8,14 +8,18 @@ This Python 3.6 package is a individual-centered genetic algorithm programmed fo
 
 ### Dependencies
 
+```
 + `pip install numpy` version 1.16.2
 + `pip install time` version 3.7
 + `pip install tkinter` version 8.6.8
 + `pip install math` version 3.5
+```
 
 ### Installation 
 
+```
 `pip install Bobby`
+```
 
 ### Documentation
 
