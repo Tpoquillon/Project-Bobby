@@ -1,5 +1,5 @@
 Bobby_Project/
-    packages/                                   
+    ProjectBobby/                                   
     __init__.py
     LICENSE
     README.md

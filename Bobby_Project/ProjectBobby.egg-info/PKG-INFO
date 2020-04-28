@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: ProjectBobby
-Version: 0.0.1
+Version: 0.0.2
 Summary: This Python 3.6 package is a individual-centered genetic algorithm programmed for optimizing and resolving puzzles such as platform games
 Home-page: https://github.com/Tpoquillon/Project-Bobby
 Author: POQUILLON Titouan, FLOREAU Julian, SORIN Baptiste
