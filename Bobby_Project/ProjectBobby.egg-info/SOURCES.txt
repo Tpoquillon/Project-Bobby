@@ -1,0 +1,13 @@
+README.md
+setup.py
+ProjectBobby.egg-info/PKG-INFO
+ProjectBobby.egg-info/SOURCES.txt
+ProjectBobby.egg-info/dependency_links.txt
+ProjectBobby.egg-info/top_level.txt
+packages/Affichage.py
+packages/Agent.py
+packages/Game.py
+packages/Genome.py
+packages/Tests.py
+packages/ViewWorld.py
+packages/__init__.py
