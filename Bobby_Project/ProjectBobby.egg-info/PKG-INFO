@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: ProjectBobby
-Version: 0.0.2
+Version: 0.0.3
 Summary: This Python 3.6 package is a individual-centered genetic algorithm programmed for optimizing and resolving puzzles such as platform games
 Home-page: https://github.com/Tpoquillon/Project-Bobby
 Author: POQUILLON Titouan, FLOREAU Julian, SORIN Baptiste
@@ -26,7 +26,7 @@ Description: # Bobby : a bio-inspired optimization algorithm.
         ### Installation 
         
         ```
-        `pip install Bobby`
+        `pip install --index-url https://test.pypi.org/simple/ --no-deps ProjectBobby`
         ```
         
         ### Documentation
@@ -35,7 +35,7 @@ Description: # Bobby : a bio-inspired optimization algorithm.
         
         ### Tutorials
         
-        Check the files located in the __tutorial__ folder
+        Check the file called Tutoriel.ipynb located in the root folder
         
         ### Authors
         

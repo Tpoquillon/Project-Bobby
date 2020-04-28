@@ -18,7 +18,7 @@ This Python 3.6 package is a individual-centered genetic algorithm programmed fo
 ### Installation 
 
 ```
-`pip install Bobby`
+`pip install --index-url https://test.pypi.org/simple/ --no-deps ProjectBobby`
 ```
 
 ### Documentation
@@ -27,7 +27,7 @@ This Python 3.6 package is a individual-centered genetic algorithm programmed fo
 
 ### Tutorials
 
-Check the files located in the __tutorial__ folder
+Check the file called Tutoriel.ipynb located in the root folder
 
 ### Authors
 
