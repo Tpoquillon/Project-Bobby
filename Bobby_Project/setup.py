@@ -4,8 +4,8 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="Project_Bobby", # Replace with your own username
-    version="0.0.1",
+    name="ProjectBobby", # Replace with your own username
+    version="0.0.2",
     author="POQUILLON Titouan, FLOREAU Julian, SORIN Baptiste",
     author_email="",
     description="This Python 3.6 package is a individual-centered genetic algorithm programmed for optimizing and resolving puzzles such as platform games",
